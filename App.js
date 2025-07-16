@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }))
 app.post("/calculate", (request, response) => {
     const name = request.body.name
     const subject = request.body.subject
-    const admno = parseInt(request.body.admno)
+    const admnno = parseInt(request.body.admnno)
     const present = parseInt(request.body.present)
     const totalpresent = parseInt(request.body.totalpresent)
 
@@ -25,7 +25,7 @@ app.post("/calculate", (request, response) => {
     const assignment = getassmark1 + getassmark2
 
     const totalinternal = attendance + assignment + exammark3
-    response.json({ "name": name, "admnno": admno, "subject": subject, "totalinternal": totalinternal, "attendance": attendance, "exammarks": exammark3, "assignmentmarks": assignment })
+    response.json({ "name": name, "admnno": admnno, "subject": subject, "totalinternal": totalinternal, "attendance": attendance, "exammarks": exammark3, "assignmentmarks": assignment })
 })
 
 
