@@ -6,8 +6,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
-sendgrid.setApiKey('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')
+sendgrid.setApiKey(process.env.SENDGRID_API_KEY)
 
 app.post("/calculate", (request, response) => {
     const {
